@@ -1,11 +1,20 @@
-document.querySelector(".btn").addEventListener("click", function () {
-  var btnContent = this.innerHTML;
+for (var i = 0; i < document.querySelectorAll(".btn").length; i++) {
+  document.querySelectorAll(".btn")[i].addEventListener("click", function () {
+    var btnContent = this.innerHTML;
 
-  setTimeout(() => {
-    if (btnContent === "+") {
-      this.innerHTML = "-";
-    } else if (btnContent === "-") {
-      this.innerHTML = "+";
-    }
-  }, 1000);
-});
+    this.classList.add("active");
+
+    setTimeout(() => {
+      if (btnContent === "+") {
+        this.textContent = "‒";
+      } else if (btnContent === "‒") {
+        this.textContent = "+";
+        // var ans = document.querySelectorAll(".ans")[i];
+        // ans.style.maxHeight = "0";
+        // ans.style.padding = "0";
+      }
+
+      this.classList.remove("active");
+    }, 500);
+  });
+}

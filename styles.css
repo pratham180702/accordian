@@ -30,6 +30,8 @@
 .content-items {
   padding: 20px;
   height: 20vh;
+  margin-bottom: 10px;
+  overflow: hidden;
 }
 
 .content-items h3 {
@@ -40,11 +42,16 @@
   border: 1px solid white;
 }
 
+.que {
+  position: relative;
+}
+
 .btn {
   font-size: 2rem;
   cursor: pointer;
-  position: relative;
-  left: 80%;
+  position: absolute;
+  top: 0;
+  right: 10px;
   background-color: transparent;
   color: white;
   border: 0;
@@ -52,9 +59,19 @@
 }
 
 .ans {
+  width: auto;
+  height: 200px;
   color: white;
   border: 1px solid white;
   background-color: #001c30;
   padding: 10px;
   margin-top: 0;
+  max-height: 200px;
+  transition: all 1s;
+  overflow: hidden;
+}
+
+.active {
+  opacity: 0; /* Target opacity after the transition */
+  font-size: 36px;
 }
